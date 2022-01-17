@@ -13,7 +13,7 @@
         </ul>
     </div>
 
-
+{{-- 
     <div class="container pb-4">
         <p class="text-center text-orange-600 text-3xl italic font-extrabold">Categorías</p>
         @if (count($categorias))
@@ -44,7 +44,7 @@
                 relación
                 calidad-precio</p>
         </div>
-    @endif
+    @endif --}}
 
     @push('script')
         <script>
