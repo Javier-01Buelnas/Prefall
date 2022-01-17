@@ -16,7 +16,7 @@
 
     <div class="container pb-4">
         <p class="text-center text-orange-600 text-3xl italic font-extrabold">Categorías</p>
-        @if (count($categoria))
+        @if (count($categorias))
 
             @foreach ($categorias as $categoria)
                 <section class="mb-6">
