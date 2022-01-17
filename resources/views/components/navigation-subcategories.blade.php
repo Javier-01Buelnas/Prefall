@@ -1,6 +1,6 @@
 @props(['categoria'])
 <div class="grid grid-cols-4 p-4">
-    @if (count($categoria))
+    @if (count($categorias))
         <div>
             <ul>
 
