@@ -16,26 +16,35 @@
 
     <div class="container pb-4">
         <p class="text-center text-orange-600 text-3xl italic font-extrabold">Categorías</p>
-        @foreach ($categorias as $categoria)
-            <section class="mb-6">
-                <div class="flex items-center mb-2">
-                    <h1 class="font-bold font-serif text-xl text-gray-700">
-                        {{ $categoria->nombre }}
-                    </h1>
-                    <a href="{{ route('categorias.show', $categoria) }}"
-                        class="text-orange-600 ml-2 font-semibold hover:text-orange-400 hover:underline">Ver más</a>
-                </div>
+        @if (count($categoria))
 
-                @livewire('category-products', ['categoria' => $categoria])
-            </section>
-        @endforeach
+            @foreach ($categorias as $categoria)
+                <section class="mb-6">
+                    <div class="flex items-center mb-2">
+                        <h1 class="font-bold font-serif text-xl text-gray-700">
+                            {{ $categoria->nombre }}
+                        </h1>
+                        <a href="{{ route('categorias.show', $categoria) }}"
+                            class="text-orange-600 ml-2 font-semibold hover:text-orange-400 hover:underline">Ver más</a>
+                    </div>
+
+                    @livewire('category-products', ['categoria' => $categoria])
+                </section>
+            @endforeach
+        @endif
     </div>
-    <div class="container mb-8">
-        <p class="text-center font-semibold text-lg font-serif">Gran variendad de productos disponibles,</p>
-        <p class="text-center text-lg font-serif">de las mejores marcas especializadas:</p>
-        @livewire('marcas', ['marcas' => $marcas])
-        <p class="text-center text-lg font-serif"><span class="font-bold mr-2">Herramientas</span>con la mejor relación calidad-precio</p>
-    </div>
+    @if (count($marcas))
+
+
+        <div class="container mb-8">
+            <p class="text-center font-semibold text-lg font-serif">Gran variendad de productos disponibles,</p>
+            <p class="text-center text-lg font-serif">de las mejores marcas especializadas:</p>
+            @livewire('marcas', ['marcas' => $marcas])
+            <p class="text-center text-lg font-serif"><span class="font-bold mr-2">Herramientas</span>con la mejor
+                relación
+                calidad-precio</p>
+        </div>
+    @endif
 
     @push('script')
         <script>
@@ -86,8 +95,6 @@
                     animation: "slide"
                 });
             });
-
-            
         </script>
     @endpush
 </x-app-layout>
