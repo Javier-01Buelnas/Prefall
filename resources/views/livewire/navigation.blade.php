@@ -163,7 +163,7 @@
             <div x-on:click.away="close()" class="grid grid-cols-4 h-full relative">
                 <ul class="bg-trueGray-800 border-l border-t border-b border-orange-600">
 
-                    @foreach ($categorias as $categoria)
+                    {{-- @foreach ($categorias as $categoria)
                         <li class="navigation-link text-white hover:bg-white hover:text-orange-600">
                             <a href="{{ route('categorias.show', $categoria) }}"
                                 class="py-2 px-4 text-sm flex justify-between items-center">
@@ -186,7 +186,7 @@
                 </ul>
                 <div class="col-span-3 bg-white">
                     <x-navigation-subcategories :categoria="$categorias->first()" />
-                </div>
+                </div> --}}
             </div>
         </div>
         {{-- menu mobil --}}
@@ -196,7 +196,7 @@
             </div>
             <ul>
                 <p class="text-white hover:text-orange-600 p-4 font-semibold">Productos</p>
-                @foreach ($categorias as $categoria)
+               {{--  @foreach ($categorias as $categoria)
                     <li class="text-white hover:bg-white hover:text-orange-600">
                         <a href="{{ route('categorias.show', $categoria) }}"
                             class="py-2 px-4 text-sm flex items-center">
@@ -206,7 +206,7 @@
                             {{ $categoria->nombre }}
                         </a>
                     </li>
-                @endforeach
+                @endforeach --}}
             </ul>
             <a href="#"
                 class="flex flex-col text-white hover:text-orange-600 px-3 py-2 rounded-md font-medium mr-2">Servicios</a>
